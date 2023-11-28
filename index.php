@@ -99,7 +99,7 @@ $split_paragraph = explode('.', $paragraph)
           ; ?>
           <div class="col-4">
             <div class="home">
-              <?php echo "{$match['team_home']} - {$match['team_away']} {$match['score_home']} - {$match['score_away']}" ?>
+              <?php echo "{$match['team_home']} - {$match['team_away']} | {$match['score_home']} - {$match['score_away']}" ?>
             </div>
           </div>
 
