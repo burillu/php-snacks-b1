@@ -161,7 +161,7 @@ $split_paragraph = explode('.', $paragraph)
           <?php foreach ($split_paragraph as $par) { ?>
 
             <p class="p-3">
-              <?php echo $par; ?>
+              <?php echo $par; ?>.
             </p>
           <?php } ?>
 
