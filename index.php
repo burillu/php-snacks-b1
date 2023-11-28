@@ -1,4 +1,5 @@
 <?php
+#Snack 1
 $games = [
   [
     'team_home' => 'Olimpia Milano',
@@ -48,9 +49,13 @@ $games = [
     'score_home' => 83,
     'score_away' => 80,
   ]
-]
+];
 
-  ?>
+
+
+
+
+?>
 
 
 <!DOCTYPE html>
@@ -88,7 +93,7 @@ $games = [
       <h2>Snack 1</h2>
       <h4>Lega Basket A 23/24</h4>
       <h6>Giornata 9 --- 26/11/2023</h6>
-      <div class="row">
+      <div class="row mb-5">
         <?php foreach ($games as $match) {
           ; ?>
           <div class="col-4">
@@ -104,6 +109,41 @@ $games = [
 
         </div>
       </div>
+      <h2>Snack 2</h2>
+
+      <form action="index.php" method="GET" class="row g-3">
+        <div class="col-md-5">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="col-md-5">
+          <label for="mail" class="form-label">Mail</label>
+          <input type="text" class="form-control" id="mail" name="mail">
+        </div>
+        <div class="col-md-2">
+          <label for="age" class="form-label">Age</label>
+          <input type="number" class="form-control" id="age" name="age">
+        </div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </div>
+
+        <?php
+        #Snack 2
+        if (isset($_GET['name']) && isset($_GET['mail']) && isset($_GET['age'])) {
+          $name = $_GET['name'];
+          $mail = $_GET['mail'];
+          $age = intval($_GET['age']);
+          //var_dump(is_int($age));
+          if (strlen($name) > 3 && str_contains($mail, '@') && str_contains($mail, '.') && is_int($age)) {
+            echo " Ciao $name, Accesso Ruscito";
+          } else {
+            echo " Accesso Negato";
+          }
+        }
+        ?>
+      </form>
 
     </div>
   </main>
