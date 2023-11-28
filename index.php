@@ -52,10 +52,11 @@ $games = [
 ];
 
 
+$paragraph = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi illo atque itaque exercitationem, inventore, architecto soluta, molestiae maxime quos odit eius dicta nobis! Deserunt nesciunt dolores rerum iusto eum aspernatur harum repellat nobis architecto? Asperiores enim voluptate quod, dignissimos placeat cumque assumenda vero ex natus voluptas optio magnam suscipit. Voluptates laborum vel quibusdam. Velit minima maiores illo a tenetur excepturi cum, corrupti itaque, voluptatum dolorem non laboriosam deleniti. Nihil ab minima quia, accusantium aspernatur quas. Fugit error placeat culpa tenetur expedita illum dolore quis maxime assumenda aperiam quibusdam qui cupiditate quaerat, totam accusantium repellat porro deserunt explicabo odio illo. Facere inventore modi laboriosam provident ex tempora vitae ipsum, eum iste praesentium nemo rerum corrupti ab ratione odit quod quibusdam ut labore sed fugiat aliquid dignissimos sequi? Officiis voluptatem at ipsam exercitationem doloribus aspernatur amet maiores culpa, quod nobis cum fugiat ratione dolor repellat eveniet quidem animi iste corporis blanditiis sunt, dolore voluptas, quas sapiente odit! Perferendis assumenda beatae ad esse quas est nesciunt odio, atque ducimus. Nesciunt distinctio illum rem cum aliquam nihil, ab cumque quos, quod blanditiis ex quasi vero nemo sapiente delectus? Enim doloribus at libero consequatur, fugiat expedita. Illum excepturi fugiat perspiciatis, corrupti iste unde ex. Velit cumque culpa cum voluptatem libero, saepe facere! Cum impedit similique libero illum, quae voluptatibus recusandae. Veritatis quam facere quia magni sed nam odio eius explicabo voluptate, deserunt sit beatae sint numquam, culpa, excepturi a cupiditate tenetur architecto. Non, amet sequi? Adipisci error quasi aliquid ut facere beatae repellendus placeat maiores inventore incidunt. Sit vel voluptatem voluptatum deserunt ad cupiditate, recusandae reprehenderit, dicta quas, facere totam perspiciatis. Dicta nulla adipisci quasi necessitatibus ipsam magni eligendi suscipit, quas quis pariatur obcaecati culpa sapiente autem ab magnam odio consectetur accusamus optio? Voluptatibus natus laudantium, nihil neque doloribus porro quos, assumenda eius error fugiat laboriosam? Deleniti sint commodi qui autem maxime doloribus, nesciunt asperiores perspiciatis totam ipsa praesentium enim incidunt officiis magnam quaerat fugiat quos nemo earum corporis dolorem, officia distinctio impedit. Laborum et sequi id hic amet non quibusdam porro assumenda. Placeat magnam cum architecto tenetur ipsam cupiditate odit eius accusamus error ipsum, unde ullam, temporibus laboriosam consectetur, illo animi! Quos porro tempora vero consectetur, eaque vel quo consequatur! Odit soluta aliquam ratione ab perferendis, doloribus error itaque esse adipisci quasi, debitis dicta nemo nesciunt reprehenderit vitae aspernatur nulla architecto sed ex sint accusantium? Minima quas similique culpa sequi, totam maiores ab impedit.';
 
+$split_paragraph = explode('.', $paragraph)
 
-
-?>
+  ?>
 
 
 <!DOCTYPE html>
@@ -137,13 +138,36 @@ $games = [
           $age = intval($_GET['age']);
           //var_dump(is_int($age));
           if (strlen($name) > 3 && str_contains($mail, '@') && str_contains($mail, '.') && is_int($age)) {
-            echo " Ciao $name, Accesso Ruscito";
+            echo "<div class= 'bg-success'> Ciao $name, Accesso Ruscito </div> ";
           } else {
-            echo " Accesso Negato";
+            echo "<div class= 'bg-danger'> Accesso Negato </div>";
           }
         }
         ?>
       </form>
+
+      <h2>Bonus</h2>
+      <div class="row">
+        <div class="col-6">
+          <h5>Paragrafo originale</h5>
+
+          <p class="p-3">
+            <?php echo $paragraph; ?>
+          </p>
+
+        </div>
+        <div class="col-6">
+          <h5>Paragrafo modificato</h5>
+          <?php foreach ($split_paragraph as $par) { ?>
+
+            <p class="p-3">
+              <?php echo $par; ?>
+            </p>
+          <?php } ?>
+
+
+        </div>
+      </div>
 
     </div>
   </main>
