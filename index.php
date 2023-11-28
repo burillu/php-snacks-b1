@@ -1,3 +1,58 @@
+<?php
+$games = [
+  [
+    'team_home' => 'Olimpia Milano',
+    'team_away' => 'Pistoia',
+    'score_home' => 81,
+    'score_away' => 86,
+  ],
+  [
+    'team_home' => 'Dinamo Sassari',
+    'team_away' => 'Scafati',
+    'score_home' => 79,
+    'score_away' => 76,
+  ],
+  [
+    'team_home' => 'Venezia',
+    'team_away' => 'Reggiana',
+    'score_home' => 90,
+    'score_away' => 70,
+  ],
+  [
+    'team_home' => 'Brindisi',
+    'team_away' => 'Virtus Bologna',
+    'score_home' => 83,
+    'score_away' => 75,
+  ],
+  [
+    'team_home' => 'Napoli',
+    'team_away' => 'Cremona',
+    'score_home' => 80,
+    'score_away' => 70,
+  ],
+  [
+    'team_home' => 'Brescia',
+    'team_away' => 'Varese',
+    'score_home' => 116,
+    'score_away' => 73,
+  ],
+  [
+    'team_home' => 'VL Pesaro',
+    'team_away' => 'Universo Treviso',
+    'score_home' => 95,
+    'score_away' => 76,
+  ],
+  [
+    'team_home' => 'Derthona',
+    'team_away' => 'Trento',
+    'score_home' => 83,
+    'score_away' => 80,
+  ]
+]
+
+  ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,10 +79,39 @@
 </head>
 
 <body>
+  <header>
+
+  </header>
+  <main>
+
+    <div class="container">
+      <h2>Snack 1</h2>
+      <h4>Lega Basket A 23/24</h4>
+      <h6>Giornata 9 --- 26/11/2023</h6>
+      <div class="row">
+        <?php foreach ($games as $match) {
+          ; ?>
+          <div class="col-4">
+            <div class="home">
+              <?php echo "{$match['team_home']} - {$match['team_away']} {$match['score_home']} - {$match['score_away']}" ?>
+            </div>
+          </div>
 
 
+
+        <?php } ?>
+        <div class="col-4">
+
+        </div>
+      </div>
+
+    </div>
+  </main>
 
   <!-- <script src="js/utility.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
   <script src="js/script.js" type="module"></script>
 </body>
 
